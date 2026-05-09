@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚾ Baseball 9 - Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>⚾ BASEBALL 9</h1>
+            <p class="subtitle">Hit Home Runs & Score Runs!</p>
+        </header>
+
+        <div class="scoreboard">
+            <div class="team home-team">
+                <h2>HOME</h2>
+                <div class="score" id="homeScore">0</div>
+                <p class="team-info">Inning: <span id="homeInning">1</span></p>
+            </div>
+            <div class="inning-display">
+                <p>INNING</p>
+                <div class="inning-number" id="inningNumber">1</div>
+                <p class="inning-status" id="inningStatus">Home Batting</p>
+            </div>
+            <div class="team away-team">
+                <h2>AWAY</h2>
+                <div class="score" id="awayScore">0</div>
+                <p class="team-info">Inning: <span id="awayInning">1</span></p>
+            </div>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat-box">
+                <label>BALLS</label>
+                <div class="stat-value" id="balls">0</div>
+            </div>
+            <div class="stat-box">
+                <label>STRIKES</label>
+                <div class="stat-value" id="strikes">0</div>
+            </div>
+            <div class="stat-box">
+                <label>OUTS</label>
+                <div class="stat-value" id="outs">0</div>
+            </div>
+            <div class="stat-box">
+                <label>RUNNERS</label>
+                <div class="stat-value" id="runners">0</div>
+            </div>
+        </div>
+
+        <div class="baseball-field">
+            <div class="field-background">
+                <svg viewBox="0 0 300 300" class="field-svg">
+                    <!-- Infield -->
+                    <polygon points="150,30 270,150 150,270 30,150" fill="#2d5016" stroke="white" stroke-width="2"/>
+                    <!-- Bases -->
+                    <rect x="140" y="20" width="20" height="20" fill="white" stroke="black" stroke-width="1"/>
+                    <rect x="260" y="140" width="20" height="20" fill="white" stroke="black" stroke-width="1"/>
+                    <rect x="140" y="260" width="20" height="20" fill="white" stroke="black" stroke-width="1"/>
+                    <rect x="20" y="140" width="20" height="20" fill="white" stroke="black" stroke-width="1"/>
+                    <!-- Home Plate -->
+                    <polygon points="150,280 160,295 150,300 140,295" fill="white" stroke="black" stroke-width="1"/>
+                </svg>
+            </div>
+            <div class="runners-display">
+                <div class="base first-base" id="firstBase"></div>
+                <div class="base second-base" id="secondBase"></div>
+                <div class="base third-base" id="thirdBase"></div>
+            </div>
+        </div>
+
+        <div class="pitch-zone">
+            <div class="pitch-target" id="pitchTarget"></div>
+            <div class="strike-zone"></div>
+        </div>
+
+        <div class="game-controls">
+            <button class="btn btn-pitch" id="pitchBtn">⚾ PITCH BALL</button>
+            <button class="btn btn-swing" id="swingBtn" disabled>🏏 SWING!</button>
+            <button class="btn btn-new-game" id="newGameBtn">🔄 NEW GAME</button>
+        </div>
+
+        <div class="game-log" id="gameLog">
+            <p class="log-entry">⚾ Welcome to Baseball 9! Let's play ball!</p>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="modal" id="gameOverModal">
+        <div class="modal-content">
+            <h2 id="gameOverTitle">GAME OVER</h2>
+            <p id="gameOverMessage"></p>
+            <div class="final-score">
+                <div class="final-team">
+                    <h3>HOME</h3>
+                    <p id="finalHomeScore">0</p>
+                </div>
+                <div class="final-team">
+                    <h3>AWAY</h3>
+                    <p id="finalAwayScore">0</p>
+                </div>
+            </div>
+            <button class="btn btn-large" id="playAgainBtn">🎮 PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
